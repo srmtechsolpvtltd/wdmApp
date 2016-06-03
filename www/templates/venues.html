@@ -1,0 +1,88 @@
+<ion-view view-title="Venues">
+<ion-nav-buttons side="primary" class="bar-calm">
+      <!--<button class="button bar-calm" ng-click="createEvent()">
+       Create Event
+      </button>-->
+    </ion-nav-buttons>
+  <ion-content  ng-click="hidesearch();">
+
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="Events">
+        
+        <div ng-repeat="place in places">
+		<div class="eventGroup" >
+          <div class="eventDetpane">
+            <div class="eventTitle">
+              <h1>{{ place.name }}</h1>
+              
+            </div>
+			<div class="eventsdate"><h4>Type: {{ place.vtype }}</h4></div>
+            <div class="eventsdis"><img src="img/icon_map.png" alt=""><span>{{ place.distance | number:2 }} Mile</span></div>
+          </div>
+          <div class="eventImg">
+           <img src="{{ urlsImg }}uploads/venue_pic/{{ place.venuelogo }}&width=464&height=227" alt="" />
+		   <!--<img image-lazy-src="{{ urlsImg }}uploads/venue_pic/{{ place.venuelogo }}&width=464&height=227" image-lazy-loader="android" >-->
+          <div class="evemsglikes">
+            <div class="eventMsg"><img src="img/web.png" width="15" alt=""><a href="{{ place.website }}">{{ place.website }}</a></div>
+            <div class="eventLikes"><img src="img/icon_like.png" alt=""><span>100</span></div>
+          </div>
+        </div>
+		</div>
+        </div>
+     
+    </div>
+  
+</div>
+
+  </ion-content>
+  <ion-footer-bar align-title="center" class="footerBar">
+  <footer>
+    <section class="contentwrap">
+	<div class="list" ng-show="filterbar"  >
+  <div class="ftdistance">
+	     <h2>Distance</h2>
+         <div class="item range range-positive">
+		 <div class="miles-cont"><span ng-model="disparam">{{ disparam }}</span><span>&nbsp;Miles</span></div>
+            <i class="icon ion-ios-outline"></i>
+            <input type="range" name="volume" ng-model="data1.volume" min="0" max="10000" value="3000" ng-change="dashboardfilter(data1.volume);">
+            <i class="icon ion-ios"></i>
+         </div>
+		 <div class="ftdisMt">
+		    <div class="ftDst">0 M</div>
+		    <div class="ftDet">1000 M</div>
+		 </div>
+    </div>
+</div>
+<div class="list"  ng-show="filterbartype">
+ <div class="ftdistance">
+ <div class="user-type-cont">
+     <div class="usertypetxt">Venue Type</div>
+      <select name="eventtype" ng-model="eventtype" ng-options="option.name for option in vtypelist track by option.id">
+        <option>Option 1</option>
+        <option selected>Option 2</option>
+        <option>Option 3</option>
+      </select>
+ </div>
+ <!--<div class="user-type-cont">
+    <div class="usertypetxt">Venue Type</div>
+      <select name="eventtype" ng-model="eventtype" ng-change="dashboardfilter(data1.volume);">
+        <option>Option 1</option>
+        <option selected>Option 2</option>
+        <option>Option 3</option>
+      </select>
+  </div>-->
+   </div>
+</div>
+      <ul>
+        <li ng-click="filterbarshow(1);"> <a href="javascript:void(0);"><img src="img/icon_list.png" alt=""></a></li>
+        <li ng-click="filterbarshow(2);"> <a href="javascript:void(0);"  ><img src="img/icon_filter.png" alt=""></a></li>
+      </ul>
+    </section>
+  </footer>
+  </ion-footer-bar>
+</ion-view>
+
+
+
+

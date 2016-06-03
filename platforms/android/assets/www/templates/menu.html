@@ -1,0 +1,72 @@
+<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>     
+            <ion-nav-bar class="bar-stable">       
+          <ion-nav-buttons side="left">          
+
+     
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+   
+    <ion-content>
+	
+	<ion-list>
+        <ion-item menu-close>
+        Welcxome to Whatsdamove!
+        </ion-item>
+		<ion-item menu-close ng-click="dashboard(10000)">
+         <i class="dashboard"></i>Dashboard
+        </ion-item>
+		<ion-item menu-close ng-click="events(10000)">
+         <i class=""></i>Events
+        </ion-item>
+		<ion-item menu-close ng-click="venues(10000)">
+         <i class=""></i>Venues
+        </ion-item>
+        <ion-item ng-hide="loginSidemenu" id="loginmenu" menu-close ng-click="login()" is-enabled="false">
+          <i class=""></i>Login     
+        </ion-item>
+        <ion-item  ng-hide="registerSidemenu" id="loginreg" menu-close ng-click="register()" >
+         <i class=""></i>Register
+        </ion-item>
+        <ion-item ng-hide="forgotSidemenu"  id="loginfor" menu-close ng-click="forgot_password()" >
+         <i class=""></i>Forgot Password
+        </ion-item>
+        <ion-item ng-hide="logoutSidemenu"  id="logoutfor" menu-close ng-click="logout()" >
+         <i class=""></i>Logout
+        </ion-item>
+      </ion-list>
+     <!--<div class="logedUsePane">
+     	<div  class="logged-user-inr"><img src="img/user-profile.jpg" /> </div>
+	    <div class="logged-user-name">Welcole to Admin WDM</div>
+     </div>
+      <ion-list>
+        <ion-item menu-close ng-click="login()">
+         <i class="home"></i> My  Profile Page
+        </ion-item>
+        <ion-item menu-close href="#/app/search">
+          <i class="events"></i>Events     
+        </ion-item>
+        <ion-item menu-close href="#/app/browse">
+         <i class="venue"></i> Venues
+        </ion-item>
+        <ion-item menu-close href="#/app/playlist">
+         <i class="eventCal"></i> Event Calendar 
+        </ion-item>
+        <ion-item menu-close href="#/app/playlist">
+          <i class="setting"></i>Settings 
+        </ion-item>
+        <ion-item menu-close href="#/app/playlist">
+         <i class="logout"></i> Logout    
+        </ion-item>
+      </ion-list>-->
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+
+

@@ -1,0 +1,114 @@
+<ion-view view-title="Create Event">
+  <ion-content>
+    <form name="myForm" novalidate >
+    <section class="contentwrap_body ">
+    <div class="signup-container">
+	
+      <form>
+        <div class="sign-up-fld-cont">
+          <input type="text" name="title" ng-model="user.title" id="title" placeholder="Event Title" required>
+        </div>
+        <div class="sign-up-fld-cont">
+          <input type="datetime" name="startTime" ng-model="user.startTime" id="startTime" placeholder="Start Date Time" required/>
+        </div>
+        <div class="sign-up-fld-cont">
+          <input type="datetime" name="endTime" id="endTime" ng-model="user.endTime" placeholder="End Date Time" required/>
+        </div>
+		<div class="sign-up-fld-cont">
+          <input type="text" name="tags" ng-model="user.tags" id="tags" placeholder="Tags" required>
+        </div>
+        <div class="sign-up-fld-cont">
+          <select ng-model="user.group" name="group" ng-options="option.name for option in groups track by option.id" >
+            <option value="">Select Groups</option>
+			<option value="1">Standard</option>
+			<option value="2">Promoter</option>
+			<option value="3">Photographer</option>
+			<option value="4">Artist / Dj's</option>
+			<option value="5">Venue Owner</option>
+          </select>
+        </div>
+		<div class="sign-up-fld-cont">
+          <select ng-model="user.dressCode" name="dressCode" ng-options="option.dress_code for option in dressCodes track by option.id" >
+            <option value="">Select Dress Code</option>
+			<option value="1">Standard</option>
+			<option value="2">Promoter</option>
+			<option value="3">Photographer</option>
+			<option value="4">Artist / Dj's</option>
+			<option value="5">Venue Owner</option>
+          </select>
+        </div>
+		<div class="sign-up-fld-cont">
+          <select ng-model="user.eventType" name="eventType" ng-options="option.name for option in types track by option.id" >
+            <option value="">Select Event Type</option>
+			<option value="1">Standard</option>
+			<option value="2">Promoter</option>
+			<option value="3">Photographer</option>
+			<option value="4">Artist / Dj's</option>
+			<option value="5">Venue Owner</option>
+          </select>
+        </div>
+		<div class="sign-up-fld-cont">
+          <select ng-model="user.country" name="country" ng-options="option.country_name for option in countries track by option.country_id" ng-change="updatestate(user.country);">
+            <option value="">Select Country</option>
+			<option value="1">Standard</option>
+			<option value="2">Promoter</option>
+			<option value="3">Photographer</option>
+			<option value="4">Artist / Dj's</option>
+			<option value="5">Venue Owner</option>
+          </select>
+        </div>
+		<div class="sign-up-fld-cont">
+          <select ng-model="user.state" name="state" required>
+            <option value="">Select State</option>
+			<option value="1">Standard</option>
+			<option value="2">Promoter</option>
+			<option value="3">Photographer</option>
+			<option value="4">Artist / Dj's</option>
+			<option value="5">Venue Owner</option>
+          </select>
+        </div>
+		<div class="sign-up-fld-cont">
+          <select ng-model="user.city" name="city" required>
+            <option value="">Select City</option>
+			<option value="1">Standard</option>
+			<option value="2">Promoter</option>
+			<option value="3">Photographer</option>
+			<option value="4">Artist / Dj's</option>
+			<option value="5">Venue Owner</option>
+          </select>
+        </div>
+		<div class="sign-up-fld-cont">
+          <select ng-model="user.venues" name="venues" required>
+            <option value="">Select Venues</option>
+			<option value="1">Standard</option>
+			<option value="2">Promoter</option>
+			<option value="3">Photographer</option>
+			<option value="4">Artist / Dj's</option>
+			<option value="5">Venue Owner</option>
+          </select>
+        </div>
+		<div class="sign-up-fld-cont">
+    <button class="button" ng-click="upload()">Upload From Assets</button>
+</div>
+        <div class="sign-up-fld-cont">
+          <textarea name="eventdetail" id="eventdetail"  ng-model="user.eventdetail" >Event Detail</textarea>
+        </div>
+		
+      </form>
+    </div>
+	<!--<button class="button button-positive" ng-click="registeruser(user.password,user.email,user.usertype,user.dob)">Register</button>-->
+	<div class="signin-form">
+	 <input type="submit" value="Register"  ng-click="addEvent(user)">
+	 </div>
+    <div class="clear"></div>
+  </section>
+  
+    </form>
+  </ion-content>
+  <ion-footer-bar align-title="center" class="footerBar">
+ 
+    <button class="footerBarbtn" ng-click="dashboard()">SKIP</button>
+   
+   
+</ion-footer-bar>
+</ion-view>

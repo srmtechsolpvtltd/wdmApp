@@ -1,0 +1,35 @@
+<ion-view view-title="Login">
+  <!--<ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>-->
+  <ion-content scroll="false">
+    <form name="myForm"  class="loginbg" >
+    <section class="contentwrap_body">
+      <div class="logoContainer"> <a href="#" class="logoContainer_inr"> <img src="img/logo.png" /> </a> </div>
+      <div class="signin-form">
+        
+        <form>
+        <input type="text" name="email" ng-model="user.email" placeholder="Email" >
+        <input type="password" name="password" ng-model="user.password" placeholder="........">
+        <div class="forgotpass">
+          <div class="right" ng-click="forgot_password()" style="cursor:default;">Forgot Password ?</div>
+        </div>
+        <input type="submit" value="Sign In" ng-click="checklogin(user.password,user.email)">
+		 
+        </form>
+        <div class="clear"> </div>
+        <div class="signup"><span  class="show-underline" title="Sign Up" class="left" ng-click="register()">New to whatsdamove? SIGN UP</span>
+      </div>
+    </section>
+    </form>
+  </ion-content>
+  <ion-footer-bar align-title="center" class="footerBar">
+ 
+    <button class="footerBarbtn" ng-click="dashboard()">SKIP</button>
+   
+   
+</ion-footer-bar>
+</ion-view>
